@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2dBots &mdash; More Info</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.13.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.13.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.13.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.13.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.13.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.13.1/firebase-analytics.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+
+    <script defer src="js/codemirror.js"></script>
+    <script defer src="js/javascript.js"></script>
+
+    <script defer src="js/constants.js"></script>
+    <script defer src="js/utils.js"></script>
+    <script defer src="js/robot.js"></script>
+    <script defer src="js/simulation.js"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#222222">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/theme/ambiance.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/challenge.css">
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-dark bg-dark">
+        <div class="container-flex d-flex justify-content-between pl-3 pr-3">
+          <a href="/" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-robot mr-3"></i>
+            <strong>2dBots &mdash; Robot Coding Game</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron bg-dark pt-4 mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <h4>2dBots is a series of two-dimensional <emph>robot</emph> challenges that teach you <emph>algorithms</emph> and programming</emph>.</h4>
+              <br/>
+              <p>
+                2dBots teaches you how to code by walking you through a series of tutorial and challenges. By the time you're done, you'll have written the code that can control a pretty sophisticated two-dimensional bot!
+              </p>
+              <p>
+                Here's why 2dBots is so awesome:
+                <ul>
+                  <li>2dBots uses a very popular (and real) language called JavaScript</li>
+                  <li>2dBots teaches you important programming concepts...</li>
+                  <li>...but it also teaches you important algorithms from the field of computer science</li>
+                  <li>2dBots is really fun, seeing as it's actually a game</li>
+                </ul>
+              </p>
+              <p>
+                By the time you're done with 2dBots, you'll be able to build the algorithm for a robot like the one you see on the right.
+              </p>
+              <br/><br/>
+              <h4>What if I'm already a really good coder?</h4>
+              <br/>
+              <p>
+                No problem. Some of the challenges are really hard, so give it your best try!
+              </p>
+            </div>
+            <div class="col-md-12 challenge-container col-lg-4">
+              <div class="card border mb-5">
+                <div class="card-header">
+                  <div class="simulation-buttons float-right">
+                    <button class="btn btn-secondary btn-sm float-right reset-button">
+                      <i class="fas fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="row">
+                    <div class="simulation-container col-12 px-0"></div>
+                    <div class="grid-container">
+                      [
+                        [D, W, W, W, D, W, W, D],
+                        [D, W, D, D, D, D, W, D],
+                        [D, W, D, D, D, D, W, D],
+                        [D, W, D, D, D, D, D, D],
+                        [D, W, D, W, W, W, W, D],
+                        [D, W, D, W, D, D, D, D],
+                        [D, D, W, W, D, D, W, W],
+                        [D, D, D, D, D, D, D, D],
+                        [D, W, W, W, D, W, W, D],
+                        [D, W, D, D, D, D, W, D],
+                        [D, W, D, D, D, D, W, D],
+                        [D, W, D, D, D, D, D, D],
+                        [D, W, D, W, W, W, W, D],
+                      ]
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="hints-modal" class="hints-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="hintModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="hints-modal-title">Hints</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+
+        class MazeRobot extends BumperBot {
+
+          constructor(simulation) {
+            super(simulation);
+            this.pos = [0, 0];
+            this.visited = {};
+            this.visited[[0, 0]] = true;
+            this.didMove = false;
+            this.didClean = false;
+          }
+
+          getEdges() {
+            var edges = [];
+
+            let attempts = [
+              [[0, 1], [1, 0], [0, -1], [-1, 0]],
+              [[1, 0], [0, -1], [-1, 0], [0, 1]],
+              [[0, -1], [-1, 0], [0, 1], [1, 0]],
+              [[-1, 0], [0, 1], [1, 0], [0, -1]]
+            ];
+
+            let directions = attempts[this.dir];
+
+            for (let ii = 0; ii < directions.length; ++ii) {
+              let x = directions[ii][0];
+              let y = directions[ii][1];
+              let pos = [this.pos[0] + x, this.pos[1] + y];
+              edges.push([pos, [x, y]]);
+            }
+            return edges;
+          }
+
+          dot(a, b) {
+            return a[0] * b[0] + a[1] * b[1];
+          }
+
+          cross(a, b) {
+            return a[0] * b[1] - a[1] * b[0];
+          }
+
+          directionToVector(d) {
+            switch (d) {
+              case 0:
+              return [0, 1];
+              case 1:
+              return [1, 0];
+              case 2:
+              return [0, -1];
+              case 3:
+              return [-1, 0];
+            }
+          }
+
+          *turnTo(direction) {
+            let oldDirection = this.directionToVector(this.dir);
+            let dotProduct = this.dot(oldDirection, direction);
+            if (dotProduct == -1) {
+              yield this.turnLeft;
+              yield this.turnLeft;
+            } else if (dotProduct == 0) {
+              let crossProduct = this.cross(oldDirection, direction);
+              if (crossProduct == -1) {
+                yield this.turnRight;
+              } else if (crossProduct == 1) {
+                yield this.turnLeft;
+              }
+            }
+          }
+
+          clean() {
+            this.simulation.cleanRobot(this.robot_idx);
+          }
+
+          *move() {
+            if (this.canMoveForward()) {
+              yield this.moveForward;
+              let direction = this.directionToVector(this.dir);
+              this.pos = [this.pos[0] + direction[0], this.pos[1] + direction[1]];
+            }
+          }
+
+          *produceNextMove() {
+            yield * this.cleanTile();
+            yield this.turnRight;
+            yield this.turnRight;
+            yield this.turnRight;
+          }
+
+          *cleanTile() {
+            this.changeColor('');
+            yield this.clean;
+            let edges = this.getEdges();
+            let D = this.directionToVector(this.dir);
+            for (let ii = 0; ii < edges.length; ++ii) {
+              let neighbor = edges[ii];
+              if (neighbor[0] in this.visited) {
+                continue;
+              }
+              this.visited[neighbor[0]] = true;
+              yield * this.turnTo(neighbor[1]);
+              if (this.canMoveForward()) {
+                yield * this.move();
+                yield * this.cleanTile();
+                yield * this.move();
+              }
+            }
+            this.changeColor('darkgreen');
+            yield * this.turnTo([-D[0], -D[1]]);
+          }
+        }
+
+        let examples = $('.example-container textarea');
+        for (let ii = 0; ii < examples.length; ++ii) {
+          let example = examples[ii];
+          CodeMirror.fromTextArea(example, {
+            lineNumbers: true,
+            viewportMargin: Infinity,
+            theme: 'ambiance',
+            mode: 'javascript',
+            tabSize: 2,
+            indentWithTabs: false,
+            readOnly: true,
+          });
+        }
+
+        let challenges = $('.challenge-container');
+        for (let ii = 0; ii < challenges.length; ++ii) {
+          let challenge = challenges[ii];
+
+          let simulationContainer = $(challenge).find('.simulation-container');
+          let gridContainer = $(challenge).find('.grid-container');
+
+          let grid = eval(gridContainer.text());
+
+          let gridCopy = copyGrid(grid);
+
+          let simulation = new Simulation(gridCopy, simulationContainer.get(0));
+          simulation.viewportOrigin = [20, 10];
+          simulation.viewportScale = 0.75;
+          simulation.addRobot(new MazeRobot(simulation), 0, 0, 1);
+          new p5(simulation.p5.bind(simulation), simulationContainer.get(0));
+
+          let resetButton = $(challenge).find('.reset-button');
+          resetButton.click(function(event) {
+            let gridCopy = copyGrid(grid);
+            simulation.grid = gridCopy;
+            simulation.reset();
+            simulation.viewportOrigin = [20, 10];
+            simulation.viewportScale = 0.75;
+
+            var x = 0;
+            var y = 0;
+
+            for (let jj = 0; jj < 10; ++jj) {
+              let xx = Math.floor(Math.random() * grid[0].length);
+              let yy = Math.floor(Math.random() * grid.length);
+              if (grid[yy][xx] == E || grid[yy][xx] == D) {
+                x = xx;
+                y = yy;
+                break;
+              }
+            }
+
+            simulation.addRobot(new MazeRobot(simulation), x, y, 1);
+          });
+
+          $(window).on('resize', simulation.windowResized.bind(simulation));
+        }
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+Tutorial 1: Movement Tutorial
+- Movement commands
+- Functions
+- Loops
+
+Making a Robot Move
+
+Robot is a custom JavaScript class that has the following movement commands:
+
+this.moveForward — Attempts to move the robot forward.
+this.turnRight — Turns the robot 90 degrees to the right.
+this.turnLeft — Turns the robot 90 degrees to the left.
+Here's a bit of an explanation of what this means:
+
+In JavaScript, the keyword this refers to the object we're controlling. In our case, this refers to the Robot that we're creating.
+
+That means that, for example, this.moveForward is the command we can use to make our Robot move forward one square (if it's not blocked by anything in front).
+
+The entire Robot algorithm that you'll be creating is basically just generating a sequence of actions (maybe moveForward twice, then turnRight, then maybe moveForward a few more times).
+
+It's important to realize that that's all your Robot is going to do: output a sequence of actions. Your Robot could be making all kinds of complicated decisions, but eventually, it decides on the next action that it needs to take to accomplish its goals.
+
+In JavaScript, we can use the yield keyword to offer the next item in a sequence.
+To make the Robot move forward, then, we can write the following line of code:
+
+              yield this.moveForward;
+
+There's a special place where all of our code must go, called *run. We'll dive deeper into what this means in later tutorials, but for now, just refer to the example on the right to get a template for how to write a *run with movement commands inside.

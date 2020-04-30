@@ -1,0 +1,19 @@
+.navbar {
+  margin-bottom: 2em;
+}
+
+main {
+  margin-bottom: 150px;
+}
+
+code {
+  color: #aac6e3;
+}
+
+ul {
+  list-style: square;
+}
+
+footer a, footer a:hover {
+  color: #205d86;
+}
