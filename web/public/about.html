@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2dBots &mdash; More Info</title>
+
+    <script src="scripts/lib/jquery-3.5.1.min.js"></script>
+    <script src="scripts/lib/p5.min.js"></script>
+    <script src="scripts/lib/codemirror.js"></script>
+    <script src="scripts/lib/codemirror_javascript.js"></script>
+    
+    <script type="module" src="scripts/about.js"></script>
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#222222">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/codemirror.css">
+    <link rel="stylesheet" href="styles/theme/ambiance.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/challenge.css">
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-dark bg-dark">
+        <div class="container-flex d-flex justify-content-between pl-3 pr-3">
+          <a href="/" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-robot mr-3"></i>
+            <strong>2dBots &mdash; Robot Coding Game</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron bg-dark pt-4 mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-lg-8">
+              <h4>2dBots is a series of two-dimensional <emph>robot</emph> challenges that teach you <emph>algorithms</emph> and programming</emph>.</h4>
+              <br/>
+              <p>
+                2dBots teaches you how to code by walking you through a series of tutorial and challenges. By the time you're done, you'll have written the code that can control a pretty sophisticated two-dimensional bot!
+              </p>
+              <p>
+                Here's why 2dBots is so awesome:
+                <ul>
+                  <li>2dBots uses a very popular (and real) language called JavaScript</li>
+                  <li>2dBots teaches you important programming concepts...</li>
+                  <li>...but it also teaches you important algorithms from the field of computer science</li>
+                  <li>2dBots is really fun, seeing as it's actually a game</li>
+                </ul>
+              </p>
+              <p>
+                By the time you're done with 2dBots, you'll be able to build the algorithm for a robot like the one you see on the right.
+              </p>
+              <br/><br/>
+              <h4>What if I'm already a really good coder?</h4>
+              <br/>
+              <p>
+                No problem. Some of the challenges are really hard, so give it your best try!
+              </p>
+            </div>
+            <div class="col-md-12 challenge-container col-lg-4">
+              <div class="card border mb-5">
+                <div class="card-header">
+                  <div class="simulation-buttons float-right">
+                    <button class="btn btn-secondary btn-sm float-right reset-button">
+                      <i class="fas fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body pt-0">
+                  <div class="row">
+                    <div class="simulation-container col-12 px-0"></div>
+                    <div class="grid-container">
+                      [
+                        [6, 1, 1, 1, 6, 1, 1, 6],
+                        [6, 1, 6, 6, 6, 6, 1, 6],
+                        [6, 1, 6, 6, 6, 6, 1, 6],
+                        [6, 1, 6, 6, 6, 6, 6, 6],
+                        [6, 1, 6, 1, 1, 1, 1, 6],
+                        [6, 1, 6, 1, 6, 6, 6, 6],
+                        [6, 6, 1, 1, 6, 6, 1, 1],
+                        [6, 6, 6, 6, 6, 6, 6, 6],
+                        [6, 1, 1, 1, 6, 1, 1, 6],
+                        [6, 1, 6, 6, 6, 6, 1, 6],
+                        [6, 1, 6, 6, 6, 6, 1, 6],
+                        [6, 1, 6, 6, 6, 6, 6, 6],
+                        [6, 1, 6, 1, 1, 1, 1, 6],
+                      ]
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="hints-modal" class="hints-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="hintModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="hints-modal-title">Hints</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

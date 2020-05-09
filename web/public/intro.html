@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2dBots &mdash; Introduction</title>
+    
+    <script src="scripts/lib/codemirror.js"></script>
+    <script src="scripts/lib/codemirror_javascript.js"></script>
+    
+    <script type="module" src="scripts/intro.js"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#222222">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/codemirror.css">
+    <link rel="stylesheet" href="styles/theme/ambiance.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/challenge.css">
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-dark bg-dark">
+        <div class="container d-flex justify-content-between pl-3 pr-3">
+          <a href="/" class="navbar-brand d-flex align-items-center">
+            <img src="images/robot-logo.png"/>
+            <strong>2dBots &mdash; Introduction</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <div class="container instructions">
+        <section class="row justify-content-center px-xl-5 bg-dark robot-introduction robot-introduction-bumperbot">
+          <div class="col-lg-12 col-xl-6">
+            <h4>Our First Robot: <code>BumperBot</code></h4>
+            <p>
+              The first robot you'll learn to program is very simple. All it can do is move forward, turn left, turn right, and sense whether it can move forward or not by bumping into something.
+            </p>
+            <p>
+              You can try to execute these commands on the <code>BumperBot</code> to the right. Press each button to issue these commands to the robot.
+
+              <div class="control-buttons btn-group">
+                <button class="btn btn-primary reset-button mr-2 button-turn-left">
+                  turnLeft
+                </button>
+                <button class="btn btn-primary reset-button mr-2 button-turn-right">
+                  turnRight
+                </button>
+                <button class="btn btn-warning reset-button mr-2 button-sense-forward">
+                  canMoveForward?
+                </button>
+                <button class="btn btn-primary reset-button mr-2 button-move-forward">
+                  moveForward
+                </button>
+              </div>
+
+            </p>
+          </div>
+          <div class="col-lg-12 demo-container col-xl-6">
+            <div class="card-body h-100 p-0">
+              <div class="row h-100">
+                <div class="simulation-container col-md-12 col-lg-12 px-0"></div>
+                <div class="grid-container">
+                [
+                  [
+                    [2, 2, 2, 1, 2],
+                    [2, 1, 2, 1, 2],
+                    [2, 1, 2, 2, 2],
+                  ]
+                ]
+                </div>
+                <div class="simulation-robots">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="row bg-dark text-justify justify-content-center px-xl-5">
+          <div class="col-lg-12 col-xl-6">
+            <h4>Writing a JavaScript Generator Function</h4>
+            <p>
+              To write a program that controls the robot, you need to implement a <emph>generator function</emph> called <code>*produceNextMove</code>.
+            </p>
+            <p class="alert alert-primary">
+              A generator function in JavaScript is something that produces items in a sequence. To make it produce items in a sequence, we use the <code>yield</code> keyword. In our case, we want to <code>yield</code> an action every time we want the robot to move.
+            </p>
+            <p class="alert alert-secondary">
+              If you boil it down, a robot is actually just a brain that thinks for a while and eventually produces the next action to take. Our <code>Robot</code> is going to be controlled by a generator function that will do some thinking, then <code>yield</code> an action, repeatedly.
+            </p>
+            <br/>
+            <h5>Generator Function Syntax</h5>
+            <p>
+              In JavaScript, generator functions have to look like what you see in the example robot implementation. That is, they have to be of the form:
+            </p>
+            <pre><code>
+              *nameOfTheGeneratorFunction() {
+                // code code code...
+              }
+            </code></pre>
+            <p>
+              Notice that they always start with a <code>*</code>, then the name of the function, then <code>()</code>. Then, there are opening and closing curly braces (<code>{</code> and <code>}</code>). In our case, the name of the function is <code>produceNextMove</code>.
+            </p>
+            <p>
+              You should write all of your code in between the curly braces. It's very important that every opening curly brace has a matching closing curly brace, or else you'll get a <code>SyntaxError</code>.
+            </p>
+          </div>
+          <div class="col-lg-12 col-xl-6">
+            <h4>Making the <code>Robot</code> Move</h4>
+            <p>
+              Now that you've controlled the <code>BumperBot</code> manually, let's write a generator function that can control it for us.
+            </p>
+            <p>
+              Here are snippets of code that make the robot perform an action:
+              <ul>
+                <li><code>yield this.moveForward</code> &mdash; Yield a move forward (if possible)</li>
+                <li><code>yield this.turnRight</code> &mdash; Yield a 90 degree turn to the right</li>
+                <li><code>yield this.turnLeft</code> &mdash; Yield a 90 degree turn to the left</li>
+              </ul>
+            </p>
+            <p>
+              You might be asking yourself why we have to type <code>this.</code> before our action. This is because we have to specify the object that our command should run on. The keyword <code>this</code> in our case means something like <emph>this <code>Robot</code></emph>. Commands are of the form <code>object</code>, then a dot, then the <code>command</code>. That's why, to yield a move forward, we yield <code>this.moveForward</code>.
+            </p>
+            <p>
+              If you're new to this, it might not make complete sense, but it will become clearer later as you do more of these tutorials. For now, see if you can use the example provided here to solve the challenge below.
+            </p>
+            <div class="card border">
+              <div class="card-header">
+                Example Robot Implementation
+              </div>
+              <div class="card-body pt-0">
+                <div class="example-container">
+                  <textarea>
+// Lines that start with // are comments.
+// They're ignored by the computer.
+
+*produceNextMove() {
+
+  // Take three steps forward
+  yield this.moveForward;
+  yield this.moveForward;
+  yield this.moveForward;
+
+  // Turn 180 degrees
+  yield this.turnRight;
+  yield this.turnRight;
+
+}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="challenge-container row justify-content-center">
+          <div class="challenge-question-container col-lg-12 col-xl-12">
+            <div class="card border-secondary">
+              <div class="card-header">
+                <div class="float-left">
+                  Challenge: Go around the map and reach the green target.
+                </div>
+                <div class="simulation-buttons btn-group float-right">
+                  <div class="map-button btn-group mr-2">
+                    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Maps
+                    </button>
+                    <div class="dropdown-menu">
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-secondary btn-sm hint-button mr-2" data-target="#hints-modal" data-toggle="modal">
+                    Hints
+                  </button>
+                  <button class="btn btn-secondary btn-sm reset-button">
+                    <i class="fas fa-redo"></i>
+                  </button>
+                  <button class="btn btn-success btn-sm run-button">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <div class="row">
+                  <div class="editor-container col-md-12 col-lg-6 pr-0">
+                    <div class="editor-code-container"></div>
+                    <div class="editor-output-container"></div>
+                  </div>
+                  <div class="simulation-container col-md-12 col-lg-6 px-0"></div>
+                  <div class="grid-container">
+                  [
+                    [
+                      [4, 2, 2, 2, 2, 2, 2],
+                      [1, 1, 1, 1, 1, 1, 2],
+                      [1, 1, 1, 1, 1, 1, 2],
+                      [1, 1, 1, 1, 1, 1, 2],
+                      [1, 1, 1, 1, 1, 1, 5]
+                    ]
+                  ]
+                  </div>
+                  <div class="d-none challenge-hints">
+                    <div class="challenge-hint">
+                      <h5>Hint 1</h5>
+                      <p>
+                        You're supposed to write the logic for your Robot in the box on the left, then click the run button, and see what happens in the simulator on the right.
+                      </p>
+                      <p>
+                        The very first thing you should do is copy-paste the example code from the write-up in the beginning. What does the Robot do in the simulation, and can you guess which lines of code are responsible for what you see it do?
+                      </p>
+                    </div>
+                    <hr />
+                    <div class="challenge-hint">
+                      <h5>Hint 2</h5>
+                      <p>
+                        The example code makes the Robot move forward three times and then turn around. Modify it to yield the actions that you need it to get to the green target.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+    <div id="hints-modal" class="hints-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="hintModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content text-justify">
+          <div class="modal-header">
+            <h4 class="modal-title" id="hints-modal-title">Hints</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-5 pt-3 pb-5 bg-dark text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>
+          &copy; 2dbots.com &mdash;
+          <a href="mailto:contact@2dbots.com">Contact</a>
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>
