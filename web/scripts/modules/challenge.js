@@ -88,7 +88,7 @@ export function initChallenges(containerClassName='.challenge-container') {
     if (ii <= 1) {
       let target = ii == 0 ? codeContainer : mapsDropdown;
       let content = ii == 0 ? 'Write your code here' : 'Switch between maps';
-      let placement = ii == 0 ? 'left' : 'bottom';
+      let placement = ii == 0 ? 'right' : 'bottom';
       let bounce = ii == 0 ? 'horizontal' : 'vertical';
       $(target).popover({
         content: content,
@@ -110,7 +110,7 @@ export function initChallenges(containerClassName='.challenge-container') {
       value: `*produceNextMove() {
 
   // Complete the *produceNextMove function!
-  
+
 
 }`,
     });

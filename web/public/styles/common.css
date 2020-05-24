@@ -1,3 +1,7 @@
+body {
+  font-family: 'Lato', 'Roboto', sans-serif;
+}
+
 .navbar {
   margin-bottom: 2em;
 }
@@ -14,8 +18,8 @@ ul {
   list-style: square;
 }
 
-footer a, footer a:hover {
-  color: #205d86;
+a, a:hover {
+    color: #fc5;
 }
 
 .navbar-brand img {

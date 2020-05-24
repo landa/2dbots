@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>2dBots &mdash; Robot Coding Game</title>
-    
-    <script data-main="scripts/loader.js" src="scripts/require.js"></script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
@@ -25,17 +23,19 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#222222">
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/album.css">
     <link rel="stylesheet" href="styles/common.css">
   </head>
   <body>
     <header>
       <div class="navbar navbar-dark bg-dark mb-0">
-        <div class="container-flex d-flex justify-content-between pl-3 pr-3">
+        <div class="container d-flex justify-content-between pl-3 pr-3">
           <a href="#" class="navbar-brand d-flex align-items-center">
-            <i class="fas fa-robot mr-3"></i>
+            <img src="images/robot-logo.png"/>
             <strong>2dBots &mdash; Robot Coding Game</strong>
           </a>
         </div>
@@ -46,154 +46,53 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h2><code>Learn to code</code> by solving <code>robotics</code> challenges online.</h2>
-          <h3 class="lead text-muted">If you're already a programmer, try solving the harder challenges.</h3>
-          <p class="mt-5">
-            <a href="intro.html" class="btn btn-lg btn-primary my-2">Start with the first challenge</a>
-            <a href="about.html" class="btn btn-lg btn-secondary my-2">Tell me more about 2dBots</a>
+          <h2>Write a combat bot in JavaScript that fights other robots.</h2>
+          <h3 class="lead text-muted mt-5">If you're a good programmer, try to defeat the AIs and other players.</h3>
+          <h3 class="lead text-muted">If you suck at coding, this will make you better.</h3>
+          <p class="mt-4">
+            <a href="tutorial.html" class="btn btn-lg btn-primary my-2">Start with the tutorial</a>
           </p>
         </div>
       </section>
 
       <div class="py-5">
         <div class="container tasks">
-          <div class="row">
-
-            <div class="col-md-4">
-              <div class="card task task-tutorial mb-4 shadow-sm">
-                <a href="intro1.html">
-                  <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="images/thumbs/intro_movement.png"/>
-                </a>
-                <div class="card-body">
-                  <h3>Intro to 2dBot</h3>
-                  <p class="card-text">
-                    Learn how to use 2dBot by writing code to control a simple robot without any sensors.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <a href="intro1.html"><button type="button" class="btn btn-primary">Start</button></a>
+          <div class="row no-gutters">
+              <div class="card col-lg-12 col-xl-6 task task-tutorial shadow-sm pr-4">
+                <div class="row">
+                    <a href="tutorial.html" class="col-md-6">
+                      <img class="bd-placeholder-img card-img-top" src="images/thumbs/tutorial.png"/>
+                    </a>
+                    <div class="card-body col-md-6">
+                      <h3>Intro to 2dBots</h3>
+                      <p class="card-text">
+                        This tutorial teaches you everything you need to know to create a 2dBot.
+                      </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <a href="tutorial.html"><button type="button" class="btn btn-primary">Start</button></a>
+                        </div>
+                        <label class="text-muted">Tutorial</label>
+                      </div>
                     </div>
-                    <label class="text-muted">Tutorial</label>
-                  </div>
                 </div>
               </div>
             </div>
 
-            <!--
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-                <div class="card-body">
-                  <h3>Run Around the Ring</h3>
-                  <p class="card-text">
-                    Program a robot to run around the outside of the ring using only a bump sensor.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-secondary">Start</button>
-                    </div>
-                    <small class="text-muted">Easy</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-                <div class="card-body">
-                  <h3>PacMan Robot</h3>
-                  <p class="card-text">
-                    Program a PacMan robot with bump sensors to collect all the dots.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-secondary">Start</button>
-                    </div>
-                    <small class="text-muted">Medium</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-                <div class="card-body">
-                  <h3>Combat: Noob Bot</h3>
-                  <p class="card-text">
-                    Fight against another robot. Your robot can see in front of itself and attack.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-secondary">Start</button>
-                    </div>
-                    <small class="text-muted">Medium (Cowardly Opponent)</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-                <div class="card-body">
-                  <h3>Combat: Bruiser Bot</h3>
-                  <p class="card-text">
-                    Fight against another robot. Your robot can see in front of itself and attack.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-secondary">Start</button>
-                    </div>
-                    <small class="text-muted">Medium (Heavy Opponent)</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
-                <div class="card-body">
-                  <h3>Combat: Vicious Bot</h3>
-                  <p class="card-text">
-                    Fight against another robot. Your robot can see in front of itself and attack.
-                  </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-secondary">Start</button>
-                    </div>
-                    <small class="text-muted">Hard (Vicious Opponent)</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      -->
       </div>
 
     </main>
 
-    <footer class="text-muted">
+    <footer class="mt-5 pt-3 pb-5 text-muted">
       <div class="container">
         <p class="float-right">
-          <a href="#">Back to top</a>
+          &copy; 2dbots.com
         </p>
-        <p>&copy; 2dbots.com</p>
       </div>
     </footer>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-        } catch (e) {
-          console.error(e);
-        }
       });
     </script>
   </body>

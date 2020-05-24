@@ -6,7 +6,7 @@ module.exports = {
     mode: "development",
     entry: {
         about: './scripts/about.js',
-        intro: './scripts/intro.js',
+        tutorial: './scripts/tutorial.js',
         404: './scripts/404.js'
     },
     output: {
