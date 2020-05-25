@@ -100,79 +100,69 @@
         </section>
         <section class="row bg-dark text-justify justify-content-center px-xl-5">
           <div class="col-lg-12 col-xl-6">
-            <h4>Writing a JavaScript Generator Function</h4>
+            <h4>Making the <code>BumperBot</code> Move</h4>
             <p>
-              To write a program that controls the robot, you need to implement a <emph>generator function</emph> called <code>*produceNextMove</code>.
+              Now that you've controlled the <code>BumperBot</code> manually, let's write a generator function that can control it for us.
+            </p>
+            <p class="alert alert-secondary">
+              A generator function in JavaScript is something that produces items in a sequence. To make it produce items in a sequence, we use the <code>yield</code> keyword. In our case, we want to <code>yield</code> an action every time we want the robot to move.
             </p>
             <p class="alert alert-primary">
-              A generator function in JavaScript is something that produces items in a sequence. To make it produce items in a sequence, we use the <code>yield</code> keyword. In our case, we want to <code>yield</code> an action every time we want the robot to move.
+              To perform an action, just <code>yield</code> its name. The <code>Robot</code> will perform it, provided that the its hardware supports that action.
+            </p>
+            <p>
+              For now, let's try to control a <code>BumperBot</code>. Here are a few example lines of code for how to perform actions for the robot:
+              <ul>
+                <li><code>yield this.MOVE_FORWARD</code> &mdash; Yield a move forward (if possible)</li>
+                <li><code>yield this.TURN_RIGHT</code> &mdash; Yield a 90 degree turn to the right</li>
+                <li><code>yield this.TURN_LEFT</code> &mdash; Yield a 90 degree turn to the left</li>
+              </ul>
             </p>
             <p class="alert alert-secondary">
               If you boil it down, a robot is actually just a brain that thinks for a while and eventually produces the next action to take. Our <code>Robot</code> is going to be controlled by a generator function that will do some thinking, then <code>yield</code> an action, repeatedly.
             </p>
-            <br/>
-            <h5>Generator Function Syntax</h5>
-            <p>
-              In JavaScript, generator functions have to look like what you see in the example robot implementation. That is, they have to be of the form:
-            </p>
-            <pre><code>
-              *nameOfTheGeneratorFunction() {
-                // code code code...
-              }
-            </code></pre>
-            <p>
-              Notice that they always start with a <code>*</code>, then the name of the function, then <code>()</code>. Then, there are opening and closing curly braces (<code>{</code> and <code>}</code>). In our case, the name of the function is <code>produceNextMove</code>.
-            </p>
-            <p>
-              You should write all of your code in between the curly braces. It's very important that every opening curly brace has a matching closing curly brace, or else you'll get a <code>SyntaxError</code>.
-            </p>
           </div>
           <div class="col-lg-12 col-xl-6">
-            <h4>Making the <code>Robot</code> Move</h4>
-            <p>
-              Now that you've controlled the <code>BumperBot</code> manually, let's write a generator function that can control it for us.
-            </p>
-            <p>
-              Here are snippets of code that make the robot perform an action:
-              <ul>
-                <li><code>yield this.moveForward</code> &mdash; Yield a move forward (if possible)</li>
-                <li><code>yield this.turnRight</code> &mdash; Yield a 90 degree turn to the right</li>
-                <li><code>yield this.turnLeft</code> &mdash; Yield a 90 degree turn to the left</li>
-              </ul>
-            </p>
-            <p>
-              You might be asking yourself why we have to type <code>this.</code> before our action. This is because we have to specify the object that our command should run on. The keyword <code>this</code> in our case means something like <emph>this <code>Robot</code></emph>. Commands are of the form <code>object</code>, then a dot, then the <code>command</code>. That's why, to yield a move forward, we yield <code>this.moveForward</code>.
-            </p>
-            <p>
-              If you're new to this, it might not make complete sense, but it will become clearer later as you do more of these tutorials. For now, see if you can use the example provided here to solve the challenge below.
-            </p>
+            <h4>Example <code>BumperBot</code> Implementation</h4>
             <div class="card border">
               <div class="card-header">
-                Example Robot Implementation
+                  Simple BumperBot Implementation
               </div>
               <div class="card-body pt-0">
                 <div class="example-container">
                   <textarea>
-// Lines that start with // are comments.
-// They're ignored by the computer.
-
 *produceNextMove() {
 
-  // Take three steps forward
-  yield this.moveForward;
-  yield this.moveForward;
-  yield this.moveForward;
+  // Move forward while you can
+  let canMoveAhead = yield this.SENSE_FORWARD;
+  while (canMoveAhead) {
+    yield this.MOVE_FORWARD;
+    canMoveAhead = yield this.SENSE_FORWARD;
+  }
 
-  // Turn 180 degrees
-  yield this.turnRight;
-  yield this.turnRight;
+  // Turn right forever
+  while (true) {
+    yield this.TURN_RIGHT;
+  }
 
 }</textarea>
                 </div>
               </div>
             </div>
+            <div class="mt-5">
+              <p>
+                This example <code>BumperBot</code> senses whether the path in front is obstructed or not, then moves forward if it isn't. It does this until it runs into an obstacle, and then it starts spinning around in place forever.
+              </p>
+              <p>
+                Later on in this page, we'll see how to do more advanced things, like creating multiple functions and generator functions, and using your browser's JavaScript debugger to step through our <code>Robot</code>'s behavior one line at a time.
+              </p>
+            </div>
           </div>
         </section>
+
+        <p class="alert alert-primary">
+          Use the example <code>BumperBot</code> implementation above to complete the following challenge. A good place to start is to copy-paste the example code.
+        </p>
 
         <section class="challenge-container row justify-content-center">
           <div class="challenge-question-container col-lg-12 col-xl-12">
@@ -212,9 +202,11 @@
                     [
                       [4, 2, 2, 2, 2, 2, 2],
                       [1, 1, 1, 1, 1, 1, 2],
-                      [1, 1, 1, 1, 1, 1, 2],
-                      [1, 1, 1, 1, 1, 1, 2],
-                      [1, 1, 1, 1, 1, 1, 5]
+                      [2, 2, 2, 2, 2, 1, 2],
+                      [2, 1, 1, 1, 2, 1, 2],
+                      [2, 1, 5, 2, 2, 1, 2],
+                      [2, 1, 1, 1, 1, 1, 2],
+                      [2, 2, 2, 2, 2, 2, 2]
                     ]
                   ]
                   </div>
